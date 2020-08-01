@@ -26,6 +26,7 @@ class ApiPdfController {
             <style>
                 * {
                     font-size: 12px;
+                    font-family: sans-serif;
                 }
             </style>
 
