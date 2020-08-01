@@ -21,7 +21,16 @@ class ApiPdfController {
 
     handle = async ({ request, response }) => {
         let html = `<link rel="stylesheet" href="/file/public?path=/css/reset.css">`
-        html += '<h1>Hello world</h1>';
+        html += `
+
+            <style>
+                * {
+                    font-size: 12px;
+                }
+            </style>
+
+            <h1>Hello world</h1>
+        `;
         let { success, buffer, err } = await this._generatePdf(html);
         if (!success) throw new Error(err);
         response.header('Content-Type', 'application/pdf');
